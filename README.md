@@ -15,23 +15,17 @@ int start=0,end=0;
 int main(){
 	int m,n,i,j,day,cnt;
 	scanf("%d %d",&m,&n);
-	
-	
 	for(i=0;i<=n+1;i++){
 		for(j=0;j<=m+1;j++){
 			box[i][j]=-1;
-			tomato[i][j]=0;}}
-			
-			
+			tomato[i][j]=0;}}		
 	for(i=1;i<=n;i++){
 		for(j=1;j<=m;j++){
 			scanf("%d",&box[i][j]);
 			if(box[i][j]==1){
 				q[end][0]=i;
 				q[end][1]=j;
-				end++;}}}
-				
-				
+				end++;}}}			
 	while(start<end){
 		int x,y;
 		x=q[start][0];
@@ -44,17 +38,13 @@ int main(){
 			    q[end][0]=x+dx[i];
 			    q[end][1]=y+dy[i];
 			    end++;}}}
-	
-	
 	for(i=1;i<=n;i++){
 		for(j=1;j<=m;j++){
 			if(day<tomato[i][j]){
 				day=tomato[i][j];}
 			if(box[i][j]==0){
-				cnt=1;}}}
-				
-				
-	if (cnt == 1) printf("모두익지 못함 -1\n");
+				cnt=1;}}}				
+  if (cnt == 1) printf("모두익지 못함 -1\n");
   else printf("토마토가 모두 익을때까지의 최소 날짜: %d\n", day);
 	return 0;
 }
